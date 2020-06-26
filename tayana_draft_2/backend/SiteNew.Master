@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteNew.master.cs" Inherits="tayana_draft_2.SiteNew" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="allcss/all.css" rel="stylesheet" />
+    <link href="allcss/main-content.css" rel="stylesheet" />
+
+    <script src="js/vendor/modernizr-2.8.3.min.js" type="e890b5fb56b29b2c2764ae18-text/javascript"></script>
+    <script src="Scripts/ckeditor/ckeditor.js"></script>
+
+    <script src="js/main.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head1" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <header class="nes-container is-rounded is-dark header">
+            <div class="menu-button">
+                <div class="profile-img">
+                    <asp:Image ID="imgEmployeeImage" runat="server" />
+                    <i class="nes-mario"></i>
+
+                </div>
+                <div class="profile-name">
+
+                    <asp:Label ID="lbluserName" runat="server" Text=""></asp:Label>
+                </div>
+
+                <div id="top-bar">
+                    <section>
+                        <button type="button" class="nes-btn is-error" onclick="document.getElementById('dialog-default').showModal();">
+                            LOG OUT
+                        </button>
+                        <dialog class="nes-dialog" id="dialog-default">
+
+                            <p class="title">WARNING</p>
+                            <p>ALERT: CLICK TO LOG OUT.</p>
+                            <menu class="dialog-menu">
+                                <button class="nes-btn">Cancel</button>
+                                <asp:Button ID="logoutBtn" runat="server" class="nes-btn is-warning" Text="LOG OUT" OnClick="logoutBtn_OnClick" />
+                            </menu>
+
+                        </dialog>
+                    </section>
+
+                </div>
+            </div>
+        </header>
+        <!-- Header - End  -->
+        <!--nav + content -->
+        <div>
+            <nav class="nes-container is-rounded is-dark sidemenu">
+                <div class="main-menu">
+                    <ul class="main-menu top">
+                        <li>
+                            <a href="WebForm1.aspx">
+                                <span></span>DASHBOARD</a>
+
+                        </li>
+                        <asp:Label ID="Label1" runat="server" Text="Label">
+                        <li>
+                                <a href="#"><!--USER MANAGEMENT -->
+                                <span class='glyphicon glyphicon-user'></span>USER MANAGEMENT
+                                    </a>       
+                        </li>
+                        </asp:Label>
+
+                        <asp:Label ID="Label2" runat="server" Text="Label">
+                        <li>
+                            <a href="AddUser.aspx">
+                                <span class='glyphicon glyphicon-cog'></span>ADD USER
+                            </a>
+                        </li>
+                        </asp:Label>
+
+                        <asp:Label ID="Label3" runat="server" Text="Label">
+                        <li>
+                            <a href="AllUsers.aspx">
+                                <span class='glyphicon glyphicon-pushpin'></span>ALL USER
+                            </a>
+                        </li>
+                        </asp:Label>
+
+                        <asp:Label ID="Label4" runat="server" Text="Label">
+                        <li>
+                            <a href="News.aspx">
+                                <span class='glyphicon glyphicon-picture'></span>MEDIA
+                            </a>
+                        </li>
+                        </asp:Label>
+
+                        <asp:Label ID="Label5" runat="server" Text="Label">
+                        <li>
+                            <a href="WebForm1.aspx">
+                                <span class='glyphicon glyphicon-book'></span>PAGES
+                            </a>
+                        </li>
+                        </asp:Label>
+                        <asp:Label ID="Label6" runat="server" Text="Label">
+                        <li>
+                            <a href="#">
+                                <span class='glyphicon glyphicon-comment'></span>COMMENTS
+                            </a>
+                        </li>
+                        </asp:Label>
+                        <%--</ul>--%>
+                    </ul>
+                </div>
+            </nav>
+
+            <div id="content-wrapper">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
